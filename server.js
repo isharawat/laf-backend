@@ -18,7 +18,7 @@ app.enable("trust proxy")
 // app.use(fileUpload())
 // app.use(cors())//avoid inter port communication error
 app.use(cors({
-    origin:"https://lfs-project.herokuapp.com",
+    origin:"http://localhost:3000/",
     credentials: true
 }));
 app.use(express.static(path.join(__dirname, 'uploads')));
@@ -28,11 +28,9 @@ app.use(express.json())
 app.use(passport.initialize())
 app.use(passport.session())
 
-mongoose.connect(`mongodb+srv://isha_03:<password>@cluster0.kytibw0.mongodb.net/lsf?retryWrites=true&w=majority`,{
+mongoose.connect(`mongodb+srv://isha_03:isha_03@cluster0.kytibw0.mongodb.net/laf?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
-    useUnifiedTopology:true,
-    useFindAndModify:false,
-    useCreateIndex:true
+    useUnifiedTopology:true
 })
 
 mongoose.connection.on('connected',()=>{
@@ -41,6 +39,5 @@ mongoose.connection.on('connected',()=>{
 
 app.use('/',routes)
 app.use('/',category)
-
 
 app.listen(port,()=> console.log(`Listening to port ${port} !!`))

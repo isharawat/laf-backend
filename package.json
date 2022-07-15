@@ -4,15 +4,17 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/abort-controller": "^3.127.0",
+    "@aws-sdk/client-s3": "^3.130.0",
     "aws-sdk": "^2.1175.0",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^7.2.2",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
@@ -28,6 +30,8 @@
     "nodemailer": "^6.7.7",
     "nodemailer-mailgun-transport": "^2.1.4",
     "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "shortid": "^2.2.16",
     "util": "^0.12.4"
   },
